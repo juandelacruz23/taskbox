@@ -10,7 +10,6 @@ const Task = ({ task: { id, title, state }, onArchiveTask, onPinTask }) => {
           name="checked"
           defaultChecked={state === "TASK_ARCHIVED"}
           disabled={true}
-          style={{ background: "red" }}
         />
         <span
           className="checkbox-custom"
@@ -18,7 +17,7 @@ const Task = ({ task: { id, title, state }, onArchiveTask, onPinTask }) => {
         ></span>
       </label>
       <div className="title">
-        <input type="text" value={title} readOnly={true} />
+        <input type="text" value={title} readOnly={true} style={{ background: "red" }} placeholder="Input title" />
       </div>
       <div className="actions" onClick={(e) => e.stopPropagation()}>
         {state !== "TASK_ARCHIVED" && (
